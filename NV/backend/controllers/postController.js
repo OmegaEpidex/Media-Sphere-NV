@@ -1,113 +1,95 @@
-const User = require('../models/User'); // Assuming you have a User model defined
+const Post = require('../models/Post'); // Assuming you have a Post model defined
 
-// Controller to get all users
-const getAllUsers = async (req, res) => {
+// Controller to get all posts
+const getAllPosts = async (req, res) => {
   try {
-    const users = await User.find({}, '-password'); // Exclude password field from the response
-    res.json(users);
+    const posts = await Post.find().populate('author', '-password'); // Populate the 'author' field and exclude password
+    res.json(posts);
   } catch (error) {
-    console.error('Error fetching users:', error);
+    console.error('Error fetching posts:', error);
     res.status(500).json({ error: 'Something went wrong' });
   }
 };
 
-// Controller to get a single user by ID
-const getUserById = async (req, res) => {
+// Controller to get a single post by ID
+const getPostById = async (req, res) => {
   try {
-    const userId = req.params.id;
-    const user = await User.findById(userId, '-password'); // Exclude password field from the response
+    const postId = req.params.id;
+    const post = await Post.findById(postId).populate('author', '-password');
 
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
     }
 
-    res.json(user);
+    res.json(post);
   } catch (error) {
-    console.error('Error fetching user:', error);
+    console.error('Error fetching post:', error);
     res.status(500).json({ error: 'Something went wrong' });
   }
 };
 
-// Controller to create a new user
-const createUser = async (req, res) => {
+// Controller to create a new post
+const createPost = async (req, res) => {
   try {
-    // Assuming the request body contains the necessary user data (e.g., name, email, password)
-    const { name, email, password } = req.body;
+    const { title, content } = req.body;
 
-    // Check if the user with the provided email already exists
-    const existingUser = await User.findOne({ email });
+    // Assuming you have the user's ID available in the request (e.g., through authentication)
+    const author = req.user._id;
 
-    if (existingUser) {
-      return res.status(400).json({ error: 'Email already exists' });
-    }
+    const newPost = new Post({ title, content, author });
+    await newPost.save();
 
-    // Create the new user
-    const newUser = new User({ name, email, password });
-    await newUser.save();
-
-    // Exclude password field from the response
-    const savedUser = newUser.toObject();
-    delete savedUser.password;
-
-    res.status(201).json(savedUser);
+    res.status(201).json(newPost);
   } catch (error) {
-    console.error('Error creating user:', error);
+    console.error('Error creating post:', error);
     res.status(500).json({ error: 'Something went wrong' });
   }
 };
 
-// Controller to update user information
-const updateUser = async (req, res) => {
+// Controller to update a post by ID
+const updatePost = async (req, res) => {
   try {
-    const userId = req.params.id;
-    // Assuming the request body contains the fields to be updated (e.g., name, email)
-    const updatedFields = req.body;
+    const postId = req.params.id;
+    const { title, content } = req.body;
 
-    const updatedUser = await User.findByIdAndUpdate(userId, updatedFields, {
-      new: true, // Return the updated user
-      runValidators: true, // Run model validations on the updated fields
-    });
+    const updatedPost = await Post.findByIdAndUpdate(
+      postId,
+      { title, content },
+      { new: true }
+    ).populate('author', '-password');
 
-    if (!updatedUser) {
-      return res.status(404).json({ error: 'User not found' });
+    if (!updatedPost) {
+      return res.status(404).json({ error: 'Post not found' });
     }
 
-    // Exclude password field from the response
-    const savedUser = updatedUser.toObject();
-    delete savedUser.password;
-
-    res.json(savedUser);
+    res.json(updatedPost);
   } catch (error) {
-    console.error('Error updating user:', error);
+    console.error('Error updating post:', error);
     res.status(500).json({ error: 'Something went wrong' });
   }
 };
 
-// Controller to delete a user by ID
-const deleteUser = async (req, res) => {
+// Controller to delete a post by ID
+const deletePost = async (req, res) => {
   try {
-    const userId = req.params.id;
-    const deletedUser = await User.findByIdAndDelete(userId);
+    const postId = req.params.id;
+    const deletedPost = await Post.findByIdAndDelete(postId).populate('author', '-password');
 
-    if (!deletedUser) {
-      return res.status(404).json({ error: 'User not found' });
+    if (!deletedPost) {
+      return res.status(404).json({ error: 'Post not found' });
     }
 
-    // Exclude password field from the response
-    const removedUser = deletedUser.toObject();
-    delete removedUser.password;
-
-    res.json(removedUser);
+    res.json(deletedPost);
   } catch (error) {
-    console.error('Error deleting user:', error);
+    console.error('Error deleting post:', error);
     res.status(500).json({ error: 'Something went wrong' });
   }
 };
 
 module.exports = {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
+  getAllPosts,
+  getPostById,
+  createPost,
+  updatePost,
+  deletePost,
 };
