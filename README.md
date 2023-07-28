@@ -1,5 +1,16 @@
 # CodeVerse-NV
-Open Source Social universe. Crowd Sourced collaboration to construct a self sustaining social platform.
+Project Name: 
+#CodeVerse - World NV - Empowering Meaningful Connections
+
+CodeVerse is an open-source social media platform that aims to redefine the way we interact, share, and connect in the digital world. Unlike traditional social media platforms, CodeVerse places the power of content creation and moderation into the hands of its vibrant user community.
+
+Why CodeVerse?
+
+🚀 Empowering User-Driven Content: CodeVerse believes in the potential of its users to create compelling content that resonates with their passions and interests. We prioritize user-generated content to foster authentic and diverse interactions.
+
+🌐 A Global Community: CodeVerse transcends geographical boundaries, enabling connections and friendships to be forged across cultures and continents.
+
+💡 Innovative Collaborations: Discover new ways to collaborate and co-create with like-minded individuals. From coding enthusiasts to creative artists, CodeVerse welcomes all talents to collaborate and inspire 
 
 social-media-site/
 ├── frontend/
