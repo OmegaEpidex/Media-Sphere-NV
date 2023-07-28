@@ -1,0 +1,17 @@
+const favicon = require('favicon');
+const fs = require('fs');
+
+// Replace 'input-image.png' with the path to your image file (must be in .png format)
+const inputImageFilePath = 'input-image.png';
+
+// Replace 'favicon.ico' with the desired name for your favicon.ico file
+const outputFaviconFilePath = 'favicon.ico';
+
+favicon(inputImageFilePath).then((icons) => {
+  // Write the generated .ico file to disk
+  fs.writeFileSync(outputFaviconFilePath, icons[0].contents);
+
+  console.log('Favicon.ico file generated successfully!');
+}).catch((error) => {
+  console.error('Error generating favicon.ico:', error);
+});
