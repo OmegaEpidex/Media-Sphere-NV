@@ -1,0 +1,16 @@
+{
+  "name": "social-media-site-backend",
+  "version": "1.0.0",
+  "description": "Backend server for the Social Media Site",
+  "main": "server.js",  // Entry point for the backend server
+  "scripts": {
+    "start": "node server.js" // Script to start the server
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",   // Web framework for Node.js
+    "mongoose": "^6.1.5"    // MongoDB object modeling tool
+    // Add other dependencies as needed
+  }
+}
