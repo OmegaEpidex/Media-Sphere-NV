@@ -1,0 +1,25 @@
+{
+  "name": "social-media-site-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the Social Media Site",
+  "homepage": "https://www.example.com", // Update with your project's homepage URL
+  "main": "index.js", // Entry point for the frontend
+  "scripts": {
+    "start": "react-scripts start", // Script to start the development server
+    "build": "react-scripts build", // Script to build the production-ready app
+    "test": "react-scripts test", // Script to run tests
+    "eject": "react-scripts eject" // Script to eject from Create React App (if needed)
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0", // HTTP client library for making API requests
+    "react": "^17.0.2", // The React library
+    "react-dom": "^17.0.2", // The ReactDOM library for rendering React components
+    "react-scripts": "4.0.3" // Configuration and scripts for Create React App
+    // Add other dependencies as needed
+  },
+  "devDependencies": {
+    // Add any development-specific dependencies here
+  }
+}
