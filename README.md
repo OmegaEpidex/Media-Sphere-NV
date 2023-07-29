@@ -82,10 +82,6 @@ pages/: This directory contains different page components (e.g., Home, Profile) 
 
 services/: This directory contains services, such as API calls, used to interact with the backend.
 
-.env: This file contains environment variables specific to the frontend (e.g., API endpoints).
-
-.gitignore: This file specifies files and directories that should be ignored by Git when committing changes.
-
 package.json: This file defines the frontend project's dependencies and scripts.
 
 backend/: This directory contains the backend code of your social media site, built with technologies like Node.js, Express, and MongoDB (or any other database).
@@ -108,11 +104,6 @@ server.js: This file starts the backend server.
 
 package.json: This file defines the backend project's dependencies and scripts.
 
-.gitignore: This file specifies files and directories that should be ignored by Git when committing changes (global .gitignore).
-
 README.md: This file contains documentation and information about the project.
-
-package.json: This file at the root level defines the main project's dependencies and scripts.
-
 
 ///All files incomplete and need detailed attention/updating///////Notes are provided within repository/////////////
