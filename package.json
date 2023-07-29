@@ -1,0 +1,25 @@
+{
+  "name": "social-media-site",
+  "version": "1.0.0",
+  "description": "A social media site powered by React and Express",
+  "main": "backend/server.js", // The entry point for your backend server
+  "scripts": {
+    "start": "node backend/server.js", // Script to start the backend server
+    "client": "cd frontend && npm start", // Script to start the frontend development server
+    "dev": "concurrently \"npm run start\" \"npm run client\"", // Script to run both backend and frontend in development mode
+    // Add other scripts as needed
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    // List any dependencies that are shared between frontend and backend
+    "express": "^4.17.1",
+    "mongoose": "^6.1.5"
+    // Add other shared dependencies as needed
+  },
+  "devDependencies": {
+    // List any development-specific dependencies for the main folder (root)
+    "concurrently": "^7.3.0"
+    // Add other development dependencies as needed
+  }
+}
