@@ -113,3 +113,6 @@ package.json: This file defines the backend project's dependencies and scripts.
 README.md: This file contains documentation and information about the project.
 
 package.json: This file at the root level defines the main project's dependencies and scripts.
+
+
+///All files incomplete and need detailed attention/updating///////Notes are provided within repository/////////////
