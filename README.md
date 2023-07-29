@@ -4,9 +4,9 @@ Project Name:
 
 NV is an open-source social media platform that aims to redefine the way we interact, share, and connect in the digital world. Unlike traditional social media platforms, NV places the power of content creation and moderation into the hands of its vibrant user community.
 
-Why NV?
+Why Media Sphere, NV?
 
-🚀 Empowering User-Driven Content: CodeVerse believes in the potential of its users to create compelling content that resonates with their passions and interests. We prioritize user-generated content to foster authentic and diverse interactions.
+🚀 Empowering User-Driven Content: NV believes in the potential of its users to create compelling content that resonates with their passions and interests. We prioritize user-generated content to foster authentic and diverse interactions.
 
 🌐 A Global Community: NV transcends geographical boundaries, enabling connections and friendships to be forged across cultures and continents.
 
