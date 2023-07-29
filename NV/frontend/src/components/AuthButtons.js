@@ -1,5 +1,5 @@
 import React from 'react';
-
+##
 const AuthButtons = () => {
   const handleSignIn = () => {
     // Redirect the user to the OAuth provider's authentication page
